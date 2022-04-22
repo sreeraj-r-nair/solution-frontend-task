@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* declare a 8 column grid on the table */
+#calendar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+#calendar tr,
+#calendar tbody,
+#calendar thead {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 40px 120px 120px 120px 120px 120px 120px 120px;
+    width: 100%;
+}
+
+
+#calendar .main-caption {
+    font-family: 'Playfair Display';
+    text-align: center;
+    color: #343434;
+    font-size: 48px;
+    grid-column: 1 / -1;
+    padding: 10px 0;
+}
+
+#calendar .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+
+
+#calendar td,
+#calendar th {
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #4a90e2;
+
+
+}
+
+#calendar .weekdays {
+    background: #CAE4E8;
+}
+
+
+#calendar .weekdays th {
+    font-family: 'Quicksand';
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 10px 6px;
+    color: #343434;
+    font-size: 18px;
+}
+
+#calendar td {
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.day {
+    font-family: 'Quicksand';
+    text-align: center;
+    color: #343434;
+    font-size: 50px;
+}
+
+#calendar .other-month {
+    color: #a8a8a8;
+    opacity: 30%;
+}
+
+#calendar .week-num {
+    font-family: 'Quicksand';
+    color: #a8a8a8;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 30%;
+    font-size: 18px;
+}
+
+table td.selected {
+    background: #cae4e8;
+    opacity: 30%;
+}
+
+#calendar td:nth-child(8) {
+    color: #d0021b !important;
+}
+
+
+
+
+/*  Mobile Responsiveness  */
+
+@media(max-width: 450px) {
+
+    body {
+        height: 10vh;
+        display: block;
+    }
+
+    #calendar .weekdays,
+    #calendar .other-month-day,
+    #calendar .week-numdays {
+        display: none;
+    }
+
+    #calendar li {
+        height: auto !important;
+        border: 1px solid #ededed;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: -1px;
+    }
+
+    #calendar {
+        table-layout: auto;
+        border-collapse: collapse;
+        width: 100%;
+        white-space: nowrap;
+
+    }
+
+    #calendar,
+    #calendar tr,
+    #calendar tbody {
+        grid-template-columns: 1fr;
+    }
+
+    #calendar tr {
+        grid-column: auto auto;
+    }
+
+    #calendar .date {
+        font-size: 35px;
+        align-content: center;
+        width: max-content;
+    }
+
+
+    #calendar td:nth-child(2):before {
+        content: "Monday";
+        display: flex;
+        position: relative;
+        top: 40px;
+    }
+
+    #calendar td:nth-child(3):before {
+        content: "Tuesday";
+        display: flex;
+        position: relative;
+        top: 40px;
+
+
+    }
+
+    #calendar td:nth-child(4):before {
+        content: "Wednesday";
+        float: right;
+        position: relative;
+        top: 40px;
+
+
+    }
+
+    #calendar td:nth-child(5):before {
+        content: "Thursday";
+        float: right;
+        position: relative;
+        top: 40px;
+
+
+    }
+
+    #calendar td:nth-child(6):before {
+        content: "Friday";
+        display: flex;
+        float: right;
+        position: relative;
+        top: 40px;
+
+
+
+    }
+
+    #calendar td:nth-child(7):before {
+        content: "Saturday";
+        display: flex;
+        position: relative;
+        top: 40px;
+
+
+    }
+
+    #calendar td:nth-child(8):before {
+        content: "Sunday";
+        display: flex;
+        position: relative;
+        color: #343434;
+        top: 40px;
+
+    }
+
+    #calendar td {
+        text-align: left;
+        bottom: 0;
+        display: flex;
+
+
+    }
+
+    #calendar td::before {
+        font-size: 16px;
+        vertical-align: bottom;
+        padding-left: 50px;
+
+
+    }
+
+}
