@@ -1,5 +1,5 @@
 
-//Date selection script
+//Date selection script to highlight the selected date
 
 var table = document.querySelector('#calendar')
 
